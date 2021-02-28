@@ -1,0 +1,51 @@
+[out:json][timeout:25];
+// gather results
+(
+  // Wyse, Візна
+  node["name:be"="Візна"]({{bbox}});
+
+  // Nare, Нараў
+  relation["name:be"="Нараў"]({{bbox}});
+  
+  // Neresna, Нярэсль
+  // https://pl.wikipedia.org/wiki/Nere%C5%9Bl
+  way["name"="Nereśl"]({{bbox}});
+  way["name"="Nareśl"]({{bbox}});
+  
+  // Geskra, Яскранка
+  way["name"="Jaskranka"]({{bbox}});
+  
+  // 6 міляў (45 км) да ракі Супраслі
+  
+  // Супрасль, Subbresla
+  way["name"="Supraśl"]({{bbox}});
+  
+  // 5 міляў (37.5 км) да ракі Плоскі
+  
+  // Ploska, Плоска
+  way["name"="Płoska"]({{bbox}});
+ 
+  // 3 мілі да ракі "Малая Нярэсль"
+  
+  // Малая Нярэсль, cleinin Neresna
+  
+  // яшчэ 3 мілі да ракі Свіслач
+  
+  // Swizleche, Свіслач
+  relation["name"="Свислочь"]({{bbox}});
+  
+  way["name"="Orlica"]({{bbox}});
+  node["name"="Orlica"]({{bbox}});
+  relation["name"="Orlica"]({{bbox}});
+);
+// print results
+out body;
+>;
+out skel qt;
+
+// https://wiki.openstreetmap.org/wiki/Overpass_turbo/MapCSS
+{{style:
+  node, way, relation {
+    text: name;
+  }
+}}
